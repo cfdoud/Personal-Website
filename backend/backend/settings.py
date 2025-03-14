@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-ffmq(@+d+%7g(w!(&!4cq3^0#_*crxn-vzps3z65#d_1=hi@0k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['3.15.144.39',
+#                 'christian-doud.netlify.app', 
+#                 '192.168.1.30',
+#                '0.0.0.0'
+#                 ]
 
 
 # Application definition
@@ -55,8 +59,12 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
+    'http://192.168.1.30:3000',
+    'https://christian-doud.netlify.app'
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True
+
 
 ROOT_URLCONF = 'backend.urls'
 
@@ -123,10 +131,10 @@ USE_TZ = True
 ALLOWED_HOSTS = [
     
     'https://christian-doud.netlify.app',
-    'localhost',
-    '127.0.0.1',
-    'backend-personal-k0ux.onrender.com',
-    
+#    'localhost',
+#    '127.0.0.1',
+#    'backend-personal-k0ux.onrender.com',
+    '3.15.144.39',
 
 ]
 
