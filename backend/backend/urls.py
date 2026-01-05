@@ -15,10 +15,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from api.views import ProjectListCreate
-urlpatterns = [
-    path('projects/', ProjectListCreate.as_view(), name='project-list-create'),
-    path('admin/', admin.site.urls),
+from django.views.generic import TemplateView
 
+# urlpatterns = [
+#     path('projects/', ProjectListCreate.as_view(), name='project-list-create'),
+#     path('admin/', admin.site.urls),
+#     re_path(r'^.*$', TemplateView.as_view(template_name='index.html')),
+# ]
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/', include('api.urls')),  # <-- use your actual app name here
+
+    # Catch-all for React SPA
+    re_path(r'^.*$', TemplateView.as_view(template_name='index.html')),
 ]

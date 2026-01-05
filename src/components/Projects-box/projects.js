@@ -8,7 +8,9 @@ function Project() {
         const fetchProjects = async () => {
             try {
                 // Try to fetch from the local server
-                const response = await fetch('http://3.139.79.246:8000/projects/');
+                // const response = await fetch('http://3.15.144.39:8000/projects/');
+                const response = await fetch('/api/projects/');
+
                 if (!response.ok) {
                     throw new Error('Failed to fetch from local server');
                 }
@@ -18,7 +20,9 @@ function Project() {
                 console.error('Error fetching from local server:', error);
                 // Fallback to the online server
                 try {
-                    const response = await fetch('3.139.79.246/projects/');
+                    // const response = await fetch('http://3.139.79.246/projects/');
+                    const response = await fetch('/api/projects/');
+
                     if (!response.ok) {
                         throw new Error('Failed to fetch from online server');
                     }

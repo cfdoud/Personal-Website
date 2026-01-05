@@ -9,33 +9,26 @@ import Toolbox from './components/toolbox-block/tool-box';
 import Project from './components/Projects-box/projects';
 
 function App() {
-
-
-
   return (
-    
     <div className="Background">
-      <div className="App">   
+      <div className="App">
         <Navbar />
-        <Bio />
-  </div>
 
+        <section className="section">
+          <Bio />
+        </section>
 
-  <div className='p-5 parent-container'>
-    {/* <div className='title-container'>
-      <h3 className='tool-text'>Tool Box</h3>
-    </div> */}
-  </div>
+        <section className="section">
+          <Toolbox />
+        </section>
 
-  <Toolbox />
-  
-  
-   <Project />  
-  
-
-
-  </div>
+        <section className="section">
+          <Project />
+        </section>
+      </div>
+    </div>
   );
 }
+
 
 export default App;
