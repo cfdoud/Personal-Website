@@ -21,7 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / '../build/static']  # adjust path
+
+STATICFILES_DIRS = [
+    BASE_DIR / "templates" / "static"
+]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
@@ -67,7 +70,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",

@@ -27,8 +27,10 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('api.urls')),  # <-- use your actual app name here
+    path('api/', include('api.urls')),
+]
 
-    # Catch-all for React SPA
+# React fallback MUST be last
+urlpatterns += [
     re_path(r'^.*$', TemplateView.as_view(template_name='index.html')),
 ]
