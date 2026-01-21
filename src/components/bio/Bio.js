@@ -48,10 +48,11 @@ function Bio() {
 
       <div className="bio">
         <p className='bio-text h5'>
-          I am a software developer, and a graduate of UC Merced with a degree
-          in Computer Science. With extensive experience in full-stack development,
-          I have excelled in collaborating both in in-person and remote settings before
-          ranging from web applications and mobile apps.
+          I am a UC Merced Computer Science graduate and full-stack developer, 
+          passionate about building new projects. 
+          I thrive in fast-paced, collaborative environments 
+          and love turning ideas into real, usable software. 
+          Always learning, always excited to tackle the next challenge.
         </p>
       </div>
     </header>
