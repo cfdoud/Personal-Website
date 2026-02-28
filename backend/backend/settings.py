@@ -81,6 +81,9 @@ CORS_ALLOWED_ORIGINS = [
     "https://christian-doud.netlify.app",
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
+
+
 ROOT_URLCONF = 'backend.urls'
 
 TEMPLATES = [
