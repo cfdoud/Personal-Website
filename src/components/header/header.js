@@ -68,8 +68,7 @@ function Navbar() {
             </div>
             <div className='markers'>
               <div className='marker'>
-                <a className="marker-text" aria-current="page" href="./assets/resume.pdf" target="_blank" rel="noopener noreferrer" download='./assets/resume.pdf'>Download Resume</a>
-              </div>
+                <a className="marker-text" href="/cfd_resume.pdf" target="_blank" rel="noopener noreferrer" download="Christian_Doud_Resume.pdf">Download Resume</a>              </div>
             </div>
           </div>
         </div>

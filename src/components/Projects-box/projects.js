@@ -1,45 +1,54 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './projects.css';
+import animeNxt from '../../assets/projects/Anime-Nxt.png';
+import instagram from '../../assets/projects/isntgram.png';
+import tsm from '../../assets/projects/TSM.png';
+import ssb from '../../assets/projects/SSB.png';
+import zse from '../../assets/projects/ZSE.png';
+
+const projects = [
+    {
+    id: 1,
+    name: "AnimeNxt",
+    description: "A website to discover your next favorite anime",
+    url: "https://github.com/cfdoud/AnimeNxT",
+    image: animeNxt
+    },
+    {
+        id: 2,
+        name: "Super Smash Bros. Tournament Tracker",
+        description: "A website to track Super Smash Bros. tournaments",
+        url: "https://github.com/cfdoud/Super-Smash-Bros-Tournament-Tracker",
+        image: ssb
+    },
+    {
+        id: 3,
+        name: "Zombie Shooter Extreme",
+        description: "Zombie style shooter game created with Raylib library",
+        url: "https://github.com/cfdoud/Zombie-Shooter-Extreme",
+        image: zse
+    },
+    {
+        id: 4,
+        name: "Instagram Clone",
+        description: "A clone of Instagram built with React and Firebase",
+        url: "https://github.com/cfdoud/Instagram-Clone",
+        image: instagram
+    },
+    {
+        id: 5,
+        name: "Time Sheet Maker",
+        description: "A time sheet maker for tracking work hours",
+        url: "https://github.com/cfdoud/Time-Sheet-Maker",
+        image: tsm
+    },
+   
+];
 
 function Project() {
-    const [projects, setProjects] = useState([]);
-
-    useEffect(() => {
-        const fetchProjects = async () => {
-            try {
-                // Try to fetch from the local server
-                // const response = await fetch('http://3.15.144.39:8000/projects/');
-                const response = await fetch('/api/projects/');
-
-                if (!response.ok) {
-                    throw new Error('Failed to fetch from local server');
-                }
-                const data = await response.json();
-                setProjects(data);
-            } catch (error) {
-                console.error('Error fetching from local server:', error);
-                // Fallback to the online server
-                try {
-                    // const response = await fetch('http://3.139.79.246/projects/');
-                    const response = await fetch('/api/projects/');
-
-                    if (!response.ok) {
-                        throw new Error('Failed to fetch from online server');
-                    }
-                    const data = await response.json();
-                    setProjects(data);
-                } catch (error) {
-                    console.error('Error fetching from online server:', error);
-                }
-            }
-        };
-
-        fetchProjects();
-    }, []);
-
     return (
         <div>
-            <div className='p-5 parent-container'>
+            <div className='parent-container' style={{paddingTop: '20px', paddingBottom: '10px'}}>
                 <div className='title-container'>
                     <h3 className='tool-text'>Recent Projects</h3>
                 </div>      
